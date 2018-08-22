@@ -36,15 +36,15 @@ const printInfo = (response) =>{
   let resp = response.Search; // Guarda ruta en variable
   resp.forEach((movie) => { // Recorre la ruta
     let card = // Imprime la card
-   `<div class="card-deck">
-   <div class="card bg-light">
-     <div class="card-body text-center">
-     <img class="card-img-top" src=${movie.Poster}, alt="Ups! imagen not found">
-       <p class="card-text">${movie.Title}</p>
+  `<div class="card border-success mb-3 rounded mx-auto d-block" style="max-width: 18rem;">
+  <div class="card-header">${movie.Title}</div>
+  <div class="card-body text-success">
+    <img class="card-img-top" src=${movie.Poster}, alt="Ups! imagen not found">
        <p class="card-text">${movie.Year}</p>
        <p class="card-text">${movie.Type}</p>
-     </div>
-   </div>`;
+  </div>
+</div>`;
     space.innerHTML += card; // Agrega el contenido al div destinado
   });
 };
+
