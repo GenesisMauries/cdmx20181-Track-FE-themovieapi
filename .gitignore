@@ -1,5 +1,5 @@
 .vscode/
 node_modules/
-.editorconfig/
-.eslintrc/
-package-lock.json/
+package-lock.json
+.editorconfig
+.eslintrc
