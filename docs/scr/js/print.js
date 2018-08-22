@@ -10,32 +10,32 @@ enter.addEventListener('keypress', (event)=>{
     let movie = enter.value; // Si es enter guarda el valor.
     // console.log(movie);
     enter.value = ''; // Limpia el input de entrada
-    space.innerHTML = '';
+    space.innerHTML = ''; // Limpia el contenedor para no sobre-escribir
     getMovie(movie);
   }
 });
 
-harryPotter.addEventListener('click', event => {
-  space.innerHTML = '';
-  getMovie('Harry Potter');
+harryPotter.addEventListener('click', event => { // Detona click
+  space.innerHTML = ''; // Limpia el contenedor antes de volver a escribir
+  getMovie('Harry Potter'); // Ejecuta la funcion y pasa el parametro
 });
 
-narnia.addEventListener('click', event => {
-  space.innerHTML = '';
-  getMovie('Narnia');
+narnia.addEventListener('click', event => { // Detona click
+  space.innerHTML = ''; // Limpia el contenedor antes de volver a escribir
+  getMovie('Narnia'); // Ejecuta funcion y pasa el parametro
 });
 
-magos.addEventListener('click', event => {
-  space.innerHTML = '';
-  getMovie('Magos');
+magos.addEventListener('click', event => { // Detona click
+  space.innerHTML = ''; // Limpia el contenedor antes de volver a escribir
+  getMovie('Magos'); // Ejecuta funcion y pasa parametro
 });
 
 
 const printInfo = (response) =>{
   console.log(response.Search);// Responde con los titulos encontrados
-  let resp = response.Search;
-  resp.forEach((movie) => {  
-    let card = 
+  let resp = response.Search; // Guarda ruta en variable
+  resp.forEach((movie) => { // Recorre la ruta
+    let card = // Imprime la card
    `<div class="card-deck">
    <div class="card bg-light">
      <div class="card-body text-center">
@@ -45,15 +45,6 @@ const printInfo = (response) =>{
        <p class="card-text">${movie.Type}</p>
      </div>
    </div>`;
-    
-    //   `<div class="card" style="width:400px">
-    //   <img class="card-img-top" src=${movie.Poster}, alt="Ups! imagen not found">
-    //   <div class="card-body">
-    //     <h4 class="card-title">${movie.Title}</h4>
-    //     <p class="card-text">${movie.Type}</p>
-    //     <p class="card-text">${movie.Year}</p>  
-    //   </div>
-    // </div>`;
-    space.innerHTML += card;
+    space.innerHTML += card; // Agrega el contenido al div destinado
   });
 };
